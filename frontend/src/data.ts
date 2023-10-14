@@ -12,13 +12,13 @@ export const menu = [
         {
           id: 2,
           title: "Clientes",
-          url: "/users/1",
+          url: "/clients",
           icon: "user.svg",
         },
         {
           id: 3,
           title: "Serviços",
-          url: "/users/1",
+          url: "/services",
           icon: "wrench.svg",
         },
         {
@@ -66,7 +66,7 @@ export const menu = [
         {
           id: 3,
           title: "Backups",
-          url: "/",
+          url: "/users/1",
           icon: "backup.svg",
         },
       ],
@@ -78,7 +78,7 @@ export const menu = [
         {
           id: 1,
           title: "Sair",
-          url: "/",
+          url: "/login",
           icon: "opened-door1.svg",
         },
         

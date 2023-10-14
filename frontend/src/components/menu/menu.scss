@@ -21,9 +21,19 @@
             padding: 10px;
             border-radius: 5px;
 
-             &:hover {
-            background-color: $soft-bg;
+            &:hover {
+            font-weight: bold;
             }
-        }       
+
+                        
+        }  
+        
+        .active {
+            background-color: #0082CA;
+            font-weight: bold;
+        }
+        
     }
+
+    
 }
