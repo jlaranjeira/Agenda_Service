@@ -40,9 +40,9 @@ module.exports = {
         let telefone = req.body.telefone;
 
         if (nome && email && telefone){
-            let Clientid = await AgService.inserir(nome, email, telefone);
+            let clientId = await AgService.inserir(nome, email, telefone);
             json.result = {
-                id: ClientId,
+                id: clientId,
                 nome,
                 email,
                 telefone
