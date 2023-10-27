@@ -11,13 +11,13 @@ const columns: GridColDef[] = [
     field: "title",
     type: "string",
     headerName: "Serviço",
-    width: 250,
+    width: 350,
   },
   {
     field: "color",
     type: "string",
     headerName: "Descrição",
-    width: 150,
+    width: 350,
   },
   {
     field: "price",

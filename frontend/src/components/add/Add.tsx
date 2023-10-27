@@ -1,6 +1,7 @@
-import { GridColDef } from "@mui/x-data-grid";
+import { DATA_GRID_PROPS_DEFAULT_VALUES, DataGrid, GridBody, GridColDef } from "@mui/x-data-grid";
 import "./add.scss";
-// import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "react-query";
+
 
 type Props = {
   slug: string;
@@ -12,40 +13,43 @@ const Add = (props: Props) => {
 
   // TEST THE API
 
-  // const queryClient = useQueryClient();
+   
+   
+   const queryClient = useQueryClient();
 
-  // const mutation = useMutation({
-  //   mutationFn: () => {
-  //     return fetch(`http://localhost:8800/api/${props.slug}s`, {
-  //       method: "post",
-  //       headers: {
-  //         Accept: "application/json",
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         id: 111,
-  //         img: "",
-  //         lastName: "Hello",
-  //         firstName: "Test",
-  //         email: "testme@gmail.com",
-  //         phone: "123 456 789",
-  //         createdAt: "01.02.2023",
-  //         verified: true,
-  //       }),
-  //     });
-  //   },
-  //   onSuccess: () => {
-  //     queryClient.invalidateQueries([`all${props.slug}s`]);
-  //   },
-  // });
+   const mutation = useMutation({
+     mutationFn: () => {
+       return fetch(`http://localhost:3000/api/${props.slug}`, {
+         method: 'POST',
+         body: JSON.stringify({}),
+         headers: {'Content-type': 'application/json; charset=UTF-8'},        
+         
+       });       
+       
+     },
+     onSuccess: () => {
+       queryClient.invalidateQueries([`all${props.slug}s`]);
+     },
+   });
+
+   //console.log(props.columns);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    
+    console.log((e.currentTarget.elements[0] as HTMLInputElement).value);
+    console.log((e.currentTarget.elements[1] as HTMLInputElement).value);
+    console.log((e.currentTarget.elements[2] as HTMLInputElement).value);
+    console.log((e.currentTarget.elements[3] as HTMLInputElement).value);
+    console.log((e.currentTarget.elements[4] as HTMLInputElement).value);
+    
     //add new item
-    // mutation.mutate();
+    mutation.mutate();
     props.setOpen(false)
   };
+
+  
   return (
     <div className="add">
       <div className="modal">
@@ -55,14 +59,15 @@ const Add = (props: Props) => {
         <h1>Add novo {props.slug}</h1>
         <form onSubmit={handleSubmit}>
           {props.columns
-            .filter((item) => item.field !== "id" && item.field !== "img")
+            .filter((item) => item.field !== "id" )
             .map((column) => (
               <div className="item">
                 <label>{column.headerName}</label>
-                <input type={column.type} placeholder={column.field} />
+                <input type={column.type} placeholder={column.headerName} />
               </div>
             ))}
           <button>Salvar</button>
+          
         </form>
       </div>
     </div>
