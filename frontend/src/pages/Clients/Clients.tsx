@@ -11,13 +11,14 @@ const columns: GridColDef[] = [
   
   {
     field: "nome",
-    type: "string",
+    type: "string",    
     headerName: "Nome",
     width: 250,
+    
   },  
   {
     field: "email",
-    type: "string",
+    type: "string",    
     headerName: "Email",
     width: 200,
   },
@@ -27,36 +28,7 @@ const columns: GridColDef[] = [
     headerName: "Telefone",
     width: 200,
   },
-  {
-    field: "endereco",
-    type: "string",
-    headerName: "Endereço",
-    width: 200,
-  },
-  {
-    field: "title",
-    type: "string",
-    headerName: "title",
-    width: 200,
-  },
-  {
-    field: "msg",
-    type: "string",
-    headerName: "msg",
-    width: 200,
-  },
-  {
-    field: "start",
-    type: "string",
-    headerName: "Start",
-    width: 200,
-  },
-  {
-    field: "end",
-    type: "string",
-    headerName: "End",
-    width: 200,
-  },
+  
   
 ];
 
@@ -68,7 +40,7 @@ const Clients = () => {
    const { isLoading, data } = useQuery({
      queryKey: ["allclients"],
      queryFn: () =>
-       fetch("http://localhost:3000/api/clients").then(
+       fetch("http://localhost:3000/clients").then(
          (res) => res.json()
        )
    });

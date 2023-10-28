@@ -20,7 +20,7 @@ import {
      const queryClient = useQueryClient();
      const mutation = useMutation({
        mutationFn: (id: number) => {
-         return fetch(`http://localhost:3000/api/${props.slug}/${id}`, {
+         return fetch(`http://localhost:3000/${props.slug}/${id}`, {
            method: "delete",
          });
        },
