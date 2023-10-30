@@ -1,3 +1,5 @@
+import Calendar from "../../components/calendar/Calendar"
+//import { Calendar } from "@fullcalendar/core/index.js";
 import "./home.scss"
 import { Link } from "react-router-dom";
 const Home = () => {
@@ -14,8 +16,11 @@ const Home = () => {
             <div className="box box3">Ordens de Serviço</div>
             <div className="box box4">Agendamento</div>
             <div className="box box5">
-            <h2>Ordens de serviço do dia</h2>
-                <p>11 de outubro de 2023</p>
+            
+                <div className="calendar">
+                    <Calendar />
+                </div>
+                
             </div>
             <div className="box box6">
             <div className="box6-container">

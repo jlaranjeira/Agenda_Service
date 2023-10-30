@@ -1,9 +1,6 @@
-import { GridColDef, GridFilterInputValue } from "@mui/x-data-grid";
+import { GridColDef } from "@mui/x-data-grid";
 import "./add.scss";
 import { useMutation, useQueryClient } from "react-query";
-import { Input } from "@mui/material";
-
-
 
 type Props = {
   slug: string;
@@ -13,27 +10,41 @@ type Props = {
 
 const Add = (props: Props) => {
 
-  // TEST THE API  
-    
-   
+  // TEST THE API
+
    const queryClient = useQueryClient();
 
    const mutation = useMutation({
-     mutationFn: (formData) => {
-       return fetch(`http://localhost:3000/${props.slug}`, formData) 
-       
+     mutationFn: () => {
+       return fetch(`http://localhost:3000/${props.slug}`, {
+         method: "post",
+         mode: "cors",
+         headers: {
+           Accept: "application/json",
+           "Content-Type": "application/json", 
+         },
+         body: JSON.stringify({          
+           Nome: "José Laranjeira",           
+           email: "testme@gmail.com",
+           telefone: "123 456 789",
+           
+         }),
+       });
      },
      onSuccess: () => {
-       queryClient.invalidateQueries([`all${props.slug}s`]); 
-       
+       queryClient.invalidateQueries([`all${props.slug}s`]);
      },
    });
-   
-      //console.log(props.columns);
+      
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); 
-    console.log(e.target)  
+    
+    console.log()
+
+    
+    
+     
      
      /*const input = {      
       nome: ((e.currentTarget.elements[0] as HTMLInputElement).value),
@@ -44,7 +55,7 @@ const Add = (props: Props) => {
 
     //add new item
     
-    mutation.mutate(new FormData(e.target));
+    mutation.mutate();
     props.setOpen(false)
   }; 
   

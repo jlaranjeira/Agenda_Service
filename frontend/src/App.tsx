@@ -23,7 +23,7 @@ function App() {
             <Menu />
           </div>
           <div className="contentContainer">
-            <Outlet />
+            <Outlet />                       
           </div>
         </div>
         <Footer />

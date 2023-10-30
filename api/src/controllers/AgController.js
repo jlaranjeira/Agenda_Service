@@ -38,6 +38,7 @@ module.exports = {
         let nome = req.body.nome;
         let email = req.body.email;
         let telefone = req.body.telefone;
+        
 
         if (nome && email && telefone){
             let clientId = await AgService.inserir(nome, email, telefone);
@@ -45,7 +46,8 @@ module.exports = {
                 id: clientId,
                 nome,
                 email,
-                telefone
+                telefone,
+                
             };
         }else{
             json.error = 'Campos não enviados';
