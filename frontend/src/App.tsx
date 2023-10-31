@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Login from "./pages/login/Login";
 import "./styles/global.scss"
+import Schedule from "./pages/schedule/index"
 
 function App() {
 
@@ -49,6 +50,11 @@ function App() {
           path: "/services",
           element: <Services />
         },
+        {
+          path: "/schedule",
+          element: <Schedule />
+        },
+        
       ]
     },
     {

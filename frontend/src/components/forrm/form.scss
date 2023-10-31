@@ -1,0 +1,45 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.form-add {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #000;
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(217, 224, 235);
+    font-size: 18px;
+}
+
+button{
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    color:#fff ;
+    font-weight: bold;
+    background-color: darkgreen;
+    margin-top: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }

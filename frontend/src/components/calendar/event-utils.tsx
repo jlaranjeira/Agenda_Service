@@ -16,8 +16,9 @@ export const INITIAL_EVENTS: EventInput[] = [
   },
   {
     id: createEventId(),
-    title: 'Timed event',
-    start: todayStr + 'T14:00:00'
+    name: 'José Laranjeira',
+    title: 'Higienização de sofá',
+    start: todayStr + 'T20:00:00'
   }
  
 ]

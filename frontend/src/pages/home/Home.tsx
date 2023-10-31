@@ -1,14 +1,28 @@
+import { useState } from "react";
+import ModalAgenda from "../../components/agenda/Agendar";
 import Calendar from "../../components/calendar/Calendar"
 //import { Calendar } from "@fullcalendar/core/index.js";
 import "./home.scss"
 import { Link } from "react-router-dom";
 const Home = () => {
+    const [open, setOpen] = useState<boolean>(false);
+    
     return (
         <div className="home">
             <div className="box box1">
-                <Link to=".\clients">
-                    <p>Clientes</p>
-                </Link>
+                
+                    <p className="agendamento" onClick={() => setOpen(!open)}>Agendamento</p>
+                    
+                               
+                
+
+                <ModalAgenda 
+                    isOpen={open} 
+                    setOpen={setOpen}
+                    title={'Agendar serviço'}
+                    description={'descrição de modal'}
+                    />
+
             </div>
             <div className="box box2">
             <Link to=".\services">Serviços</Link>

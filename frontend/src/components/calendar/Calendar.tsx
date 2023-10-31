@@ -58,7 +58,7 @@ function Calendar() {
 
   function handleEventClick(clickInfo: EventClickArg) {    
         
-      if (confirm("Deseja realmente apagar este registro?") == true) {        
+      if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
           clickInfo.event.remove()
       }       
   }  
