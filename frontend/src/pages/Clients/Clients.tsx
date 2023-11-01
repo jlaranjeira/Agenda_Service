@@ -40,7 +40,7 @@ const Clients = () => {
    const { isLoading, data } = useQuery({
      queryKey: ["allclients"],
      queryFn: () =>
-       fetch("http://localhost:3000/clients").then(
+       fetch("http://localhost:3000/tasks").then(
          (res) => res.json()
        )
    });

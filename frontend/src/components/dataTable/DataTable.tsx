@@ -20,7 +20,7 @@ import {
      const queryClient = useQueryClient();
      const mutation = useMutation({
        mutationFn: (id: number) => {
-         return fetch(`http://localhost:3000/${props.slug}/${id}`, {
+         return fetch(`http://localhost:3000/tasks/${id}`, {
            method: "delete",
          });
        },
@@ -31,6 +31,7 @@ import {
   
     const handleDelete = (id: number) => {
       //delete the item
+      if (confirm('Deseja apagar este registro?') === true)
        mutation.mutate(id)
     };
   
