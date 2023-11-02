@@ -44,7 +44,7 @@ function Calendar() {
         headerToolbar={{
           start: "today prev,next", // will normally be on the left. if RTL, will be on the right
           center: "title",
-          end: "dayGridMonth,timeGridWeek,listDay", // will normally be on the right. if RTL, will be on the left        
+          end: "dayGridMonth,timeGridWeek", // will normally be on the right. if RTL, will be on the left        
        }}
         buttonText={
           {

@@ -4,6 +4,7 @@ import Calendar from "../../components/calendar/Calendar"
 //import { Calendar } from "@fullcalendar/core/index.js";
 import "./home.scss"
 import { Link } from "react-router-dom";
+import Cal from "../../components/calendar/cal";
 const Home = () => {
     const [open, setOpen] = useState<boolean>(false);
        
@@ -11,7 +12,9 @@ const Home = () => {
         <div className="home">
             <div className="box box1">              
                     
-                    <p className="agendamento" onClick={() => setOpen(!open)}>Agendamento</p>                
+                    {/*<p className="agendamento" onClick={() => setOpen(!open)}>Agendamento</p>*/}
+
+                    <Link to=".\clients">Clientes</Link>               
 
             </div>
 
@@ -34,7 +37,10 @@ const Home = () => {
             <div className="box6-container">
                     <div className="calendar">
 
-                        <h3>Agenda do dia </h3>    
+                        <h3 className="agdia">Agenda do dia </h3>
+                        <div>
+                            <Cal />
+                        </div>    
 
                     </div>
                     <div className="osaberta">OS Abertas</div>

@@ -49,7 +49,7 @@ const Clients = () => {
     <div className="client">
       <div className="info">
         <h1>Clientes</h1>
-        <button onClick={() => setOpen(true)}>Add Novo</button>
+        {/*<button onClick={() => setOpen(true)}>Add Novo</button>*/}
       </div>
       
       {/* TEST THE API */}

@@ -90,8 +90,11 @@ const FormAdd = () => {
                         <option value="Lavagem de tapete">Lavagem de tapete - R$ 150,00</option>
                     </select>
                     <label>Observação</label>
-                    <textarea name="msg" onChange={valueInput}></textarea>
-                    <button type="submit">Enviar</button>                        
+                    <textarea name="msg" rows={3} onChange={valueInput}></textarea>
+                    <div className="div-btn">
+                        <button className="btn-form" type="submit">Enviar</button> 
+                    </div>
+                                           
 
                 </form>
 

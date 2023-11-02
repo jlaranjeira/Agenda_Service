@@ -1,9 +1,10 @@
+@import "../../styles/variables.scss";
+
 .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    
+    width: 350px;    
 }
 
 .form-add {
@@ -12,28 +13,38 @@
     gap: 10px;
     color: #000;
     font-weight: 600;
-    margin-top: 25px;
+    margin-top: 25px;    
 }
 
-input, select {
+input, select, textarea {
     padding: 10px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(217, 224, 235);
-    font-size: 18px;
+    background-color: transparent;
+    color: #000000;
+    outline: none;
+    border: 1px solid $soft-color;
+    border-radius: 3px;
+    font-size: 16px;
 }
 
-button{
+.div-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-form{
     padding: 20px;
     border-radius: 10px;
     border: none;
     color:#fff ;
-    font-weight: bold;
+    font-weight: 500;
     background-color: darkgreen;
     margin-top: 25px;
     font-size: 20px;
-    cursor: pointer;
-    
+    cursor: pointer; 
+    width: 300px; 
+    height: 60px;    
 }
 
 .close {
@@ -42,4 +53,10 @@ button{
     right: 10px;
     cursor: pointer;
     font-weight: bold;
-  }
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+}
+  

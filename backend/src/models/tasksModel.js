@@ -7,7 +7,7 @@ const getAll = async () => {
 
 const createTask = async (task) => {
   const { nome, email, telefone, endereco, title, msg, start } = task;
-  const dateUTC = new Date(Date.now()).toUTCString();
+  //const dateUTC = new Date(Date.now()).toUTCString();
 
   const query = 'INSERT INTO events(nome, email, telefone, endereco, title, msg, start) VALUES (?, ?, ?, ?, ?, ?, ?)';
 
