@@ -25,13 +25,14 @@ function Cal() {
     currentEvents: []
   }*/
 
-  const { isLoading, data } = useQuery({
+  const { isloading, data } = useQuery({
     queryKey: ["allclients"],
     queryFn: () =>
       fetch("http://localhost:3000/tasks").then(
         (res) => res.json()
       )
   });
+  
 
   return (
     <div>
@@ -66,7 +67,8 @@ function Cal() {
         
         
         //Lista os eventos do banco de dados
-        events={data}      
+        events={data}  
+           
         
         
       />

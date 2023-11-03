@@ -1,12 +1,12 @@
-const validateFieldTitle = (request, response, next) => {
+const validateFieldNome = (request, response, next) => {
   const { body } = request;
 
-  if (body.title === undefined) {
-    return response.status(400).json({ message: 'The field "title" is required' });
+  if (body.email === undefined) {
+    return response.status(400).json({ message: 'The field "email" is required' });
   }
 
-  if (body.title === '') {
-    return response.status(400).json({ message: 'title cannot be empty' });
+  if (body.email === '') {
+    return response.status(400).json({ message: 'email cannot be empty' });
   }
 
   next();
@@ -28,5 +28,5 @@ const validateFieldStatus = (request, response, next) => {
 
 module.exports = {
   validateFieldStatus,
-  validateFieldTitle,
+  validateFieldNome,
 };

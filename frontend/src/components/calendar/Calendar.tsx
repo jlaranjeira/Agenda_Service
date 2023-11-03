@@ -28,13 +28,14 @@ function Calendar() {
   const { isLoading, data } = useQuery({
     queryKey: ["allclients"],
     queryFn: () =>
-      fetch("http://localhost:3000/tasks").then(
+      fetch("http://localhost:3000/clients").then(
         (res) => res.json()
       )
   });
-
+  
   return (
-    <div>
+    
+    <div className='calendar'>
        
       <Fullcalendar
         locale='pt-br'
@@ -66,6 +67,7 @@ function Calendar() {
         
         
         //Lista os eventos do banco de dados
+        
         events={data}      
         
         
@@ -75,7 +77,7 @@ function Calendar() {
                     isOpen={open} 
                     setOpen={setOpen}
                     title={'Agendar serviço'}
-                    description={'descrição de modal'}
+                    
                     />
 
     </div>

@@ -2,19 +2,19 @@ const express = require('express');
 
 const router = express.Router();
 
-const tasksController = require('./controllers/tasksController');
-const tasksMiddleware = require('./middlewares/tasksMiddleware');
+const clientsController = require('./controllers/clientsController');
+const clientsMiddleware = require('./middlewares/clientsMiddleware');
 const serviceController = require('./controllers/serviceController');
 const serviceMiddleware = require('./middlewares/serviceMiddleware');
 
 
-router.get('/tasks', tasksController.getAll);
-router.post('/tasks', tasksMiddleware.validateFieldTitle, tasksController.createTask);
-router.delete('/tasks/:id', tasksController.deleteTask);
-router.put('/tasks/:id',
-  tasksMiddleware.validateFieldTitle,
-  tasksMiddleware.validateFieldStatus,
-  tasksController.updateTask,
+router.get('/clients', clientsController.getAll);
+router.post('/client', clientsMiddleware.validateFieldNome, clientsController.createClient);
+router.delete('/clients/:id', clientsController.deleteClient);
+router.put('/clients/:id',
+  clientsMiddleware.validateFieldNome,
+  //clientsMiddleware.validateFieldStatus,
+  clientsController.updateClient,
 );
 
 ///Routes Service
@@ -23,7 +23,7 @@ router.post('/service', serviceMiddleware.validateFieldNome, serviceController.c
 router.delete('/services/:id', serviceController.deleteService);
 router.put('/services/:id',
   serviceMiddleware.validateFieldNome,
-  serviceMiddleware.validateFieldStatus,
+  //serviceMiddleware.validateFieldStatus,
   serviceController.updateService,
 );
 

@@ -36,7 +36,7 @@ const FormAdd = () => {
             };
 
             //fazer a requisição para a API utilizando o axios
-            await axios.post('http://localhost:3000/tasks', data, headers).then((response) => { //Acessa esta linha quando repode com sucesso, status (200).
+            await axios.post('http://localhost:3000/client', data, headers).then((response) => { //Acessa esta linha quando repode com sucesso, status (200).
                 //Atribui a mensagem no state message                
                 //console.log(response.data.mensagem);
                 setMessage(response.data.mensagem)
