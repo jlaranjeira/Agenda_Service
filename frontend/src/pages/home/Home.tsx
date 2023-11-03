@@ -7,6 +7,16 @@ import { Link } from "react-router-dom";
 import Cal from "../../components/calendar/cal";
 const Home = () => {
     const [open, setOpen] = useState<boolean>(false);
+    const [data, setData] = useState({
+        nome: '',
+        email: '',
+        telefone: '',
+        endereco: '',
+        title: '',
+        msg: '',
+        start: ''
+        });
+
        
     return (
         <div className="home">

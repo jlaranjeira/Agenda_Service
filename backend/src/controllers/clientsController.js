@@ -5,6 +5,13 @@ const getAll = async (_request, response) => {
   return response.status(200).json(clients);
 };
 
+const getOne = async (request, response) => {  
+  const { id } = request.params;
+
+  const oneClient = await clientsModel.getOne(id);
+  return response.status(200).json(oneClient);
+};
+
 const createClient = async (request, response) => {
   const createdClient = await clientsModel.createClient(request.body);
   return response.status(201).json(createdClient);
@@ -26,6 +33,7 @@ const updateClient = async (request, response) => {
 
 module.exports = {
   getAll,
+  getOne,
   createClient,
   deleteClient,
   updateClient,

@@ -43,24 +43,22 @@ const FormAdd = () => {
 
                 //Limpar o formulário
                 setData({
-                    data:'',
+                    start:'',
                     nome: '',
                     email: '',
                     telefone: '',
                     endereco: '',
                     title: '',
-                    msg: ''
-                    
+                    msg: ''                    
                 })
             }).catch((err) => { // acessa o catch quandoa API retorna erro.
-                console.log(err.response.data.mensagem);
+                //console.log(err.response.data.mensagem);
                 if(err.response){
                     setMessage(err.response.data.mensagem);
                 }else{
                     setMessage("Erro: Tente novamente mais tarde!");
                 }
             });
-
         }    
 
 

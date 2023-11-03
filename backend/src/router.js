@@ -9,6 +9,7 @@ const serviceMiddleware = require('./middlewares/serviceMiddleware');
 
 
 router.get('/clients', clientsController.getAll);
+router.get('/clients/:id', clientsController.getOne);
 router.post('/client', clientsMiddleware.validateFieldNome, clientsController.createClient);
 router.delete('/clients/:id', clientsController.deleteClient);
 router.put('/clients/:id',
@@ -19,6 +20,7 @@ router.put('/clients/:id',
 
 ///Routes Service
 router.get('/services', serviceController.getAllService);
+router.get('/services/:id', serviceController.getOneService);
 router.post('/service', serviceMiddleware.validateFieldNome, serviceController.createService);
 router.delete('/services/:id', serviceController.deleteService);
 router.put('/services/:id',

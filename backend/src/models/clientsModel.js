@@ -5,6 +5,12 @@ const getAll = async () => {
   return clients;
 };
 
+const getOne = async (id) => {
+  const [oneClient] = await connection.execute('SELECT * FROM events WHERE id = ?', [id]);
+  return oneClient;
+};
+
+
 const createClient = async (client) => {
   const { nome, email, telefone, endereco, title, msg, start } = client;
   //const dateUTC = new Date(Date.now()).toUTCString();
@@ -31,6 +37,7 @@ const updateClient = async (id, client) => {
 
 module.exports = {
   getAll,
+  getOne,
   createClient,
   deleteClient,
   updateClient,

@@ -17,7 +17,7 @@ import {useState} from 'react'
 
 
 function Calendar() {
-
+  
   const [open, setOpen] = useState<boolean>(false);
 
   /*const state = {
@@ -40,8 +40,8 @@ function Calendar() {
       <Fullcalendar
         locale='pt-br'
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
-        initialView={"dayGridMonth"}
-        initialEvents={data} // alternatively, use the `events` setting to fetch from a feed
+       
+        //initialEvents={data} // alternatively, use the `events` setting to fetch from a feed
         headerToolbar={{
           start: "today prev,next", // will normally be on the left. if RTL, will be on the right
           center: "title",
@@ -57,6 +57,7 @@ function Calendar() {
           }
         }        
         
+        initialView={"dayGridMonth"}
         height={"60vh"}
         editable={true}
         selectable={true}
@@ -64,8 +65,9 @@ function Calendar() {
         eventContent={renderEventContent} // custom render function
         eventClick={handleEventClick}
         dateClick={select}
-        
-        
+        weekends={true} 
+        selectMirror={true}
+               
         //Lista os eventos do banco de dados
         
         events={data}      
@@ -74,11 +76,11 @@ function Calendar() {
       />
 
 <ModalAgenda 
-                    isOpen={open} 
-                    setOpen={setOpen}
-                    title={'Agendar serviço'}
+    isOpen={open} 
+    setOpen={setOpen}
+    title={'Agendar serviço'}
                     
-                    />
+/>
 
     </div>
   );
@@ -91,17 +93,24 @@ function Calendar() {
     )
   };
 
-  function handleEventClick(clickInfo: EventClickArg) {    
-        
-      if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
-          clickInfo.event.remove()
-      }       
+  function handleEventClick(clickInfo: EventClickArg) {  
+      
+    
+      //if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
+         //clickInfo.event.id
+      //}       
   };
   
   function select(info) {
     alert('Data selecionada: ' +  info.dateStr);
     {setOpen(!open)}  
   };
+
+  /*function handleWeekendsToggle(boolean) = {
+    
+      weekendsVisible={true}
+    
+  }*/
 
   //Sidebar
 

@@ -5,6 +5,11 @@ const getAll = async () => {
   return service;
 };
 
+const getOneService = async (id) => {
+  const [oneService] = await connection.execute('SELECT * FROM service WHERE id = ?', [id]);
+  return oneService;
+};
+
 const createService = async (service) => {
   const { nome, description, price } = service;
   //const dateUTC = new Date(Date.now()).toUTCString();
@@ -31,6 +36,7 @@ const updateService = async (id, service) => {
 
 module.exports = {
   getAll,
+  getOneService,
   createService,
   deleteService,
   updateService,
