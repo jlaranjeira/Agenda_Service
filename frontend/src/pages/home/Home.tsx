@@ -23,18 +23,48 @@ const Home = () => {
             <div className="box box1">              
                     
                     {/*<p className="agendamento" onClick={() => setOpen(!open)}>Agendamento</p>*/}
-
-                    <Link to=".\clients">Clientes</Link>               
+                    <div className="img-btn-client">
+                    <Link to=".\clients">
+                        <img className="btn-client" src="user.svg" alt="" />
+                        Clientes
+                    </Link>
+                    </div>                                
 
             </div>
 
             <div className="box box2">
-            <Link to=".\services">Serviços</Link>
+                <div className="img-btn-client">
+                        
+                    <Link to=".\services">
+                        <img className="btn-client" src="wrench.svg" alt="" />
+                        Serviços
+                    
+                    </Link>   
+                </div>
+            
             </div>
 
-            <div className="box box3">Ordens de Serviço</div>
+            <div className="box box3">
+                
+                <div className="img-btn-client">
+                    <img className="btn-client" src="writing.svg" alt="" /> 
+                    Ordem de Serviço                   
+                </div>
 
-            <div className="box box4">Agendamento</div>
+            </div>
+                
+
+            <div className="box box4">
+            <div className="img-btn-client">
+                            
+                    
+                    <img className="btn-client" src="agenda.svg" alt="" />
+                    
+                    <p className="agendamento" onClick={() => setOpen(!open)}>Agendamento</p>
+                    
+                                       
+                </div>
+            </div>
             
             <div className="box box5">
             
@@ -63,11 +93,13 @@ const Home = () => {
             </div>
 
             <ModalAgenda 
-                    isOpen={open} 
-                    setOpen={setOpen}
-                    title={'Agendar serviço'}
-                    description={'descrição de modal'}
-                    />
+    isOpen={open} 
+    setOpen={setOpen}
+    title={'Agendar serviço'}
+                    
+/>
+
+            
                         
         </div>
 

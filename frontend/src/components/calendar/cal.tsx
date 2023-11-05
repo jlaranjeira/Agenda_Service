@@ -57,7 +57,7 @@ function Cal() {
           }
         }        
         
-        height={"30vh"}
+        height={"40vh"}
         editable={true}
         selectable={true}
         dayMaxEvents={true}

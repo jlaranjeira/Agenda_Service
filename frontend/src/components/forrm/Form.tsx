@@ -43,13 +43,13 @@ const FormAdd = () => {
 
                 //Limpar o formulário
                 setData({
-                    start:'',
                     nome: '',
                     email: '',
                     telefone: '',
                     endereco: '',
                     title: '',
-                    msg: ''                    
+                    msg: '',
+                    start: ''                   
                 })
             }).catch((err) => { // acessa o catch quandoa API retorna erro.
                 //console.log(err.response.data.mensagem);
@@ -69,18 +69,18 @@ const FormAdd = () => {
 
                 <form className="form-add" onSubmit={addSchedule}>
                     <label>Data</label>
-                    <input type="datetime-local" name="start" id="data" onChange={valueInput}/>
+                    <input type="datetime-local" name="start" id="data" onChange={valueInput} value={data.start}/>
                     
                     <label>Nome</label>
-                    <input type="text" name="nome" placeholder="Digite seu nome" onChange={valueInput}/>
+                    <input type="text" name="nome" placeholder="Digite seu nome" onChange={valueInput} value={data.nome}/>
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="Digite seu email" onChange={valueInput}/>
+                    <input type="email" name="email" placeholder="Digite seu email" onChange={valueInput} value={data.email}/>
                     <label>Telefome</label>
-                    <input type="tel" name="telefone" placeholder="Digite seu telefone" onChange={valueInput}/>
+                    <input type="tel" name="telefone" placeholder="Digite seu telefone" onChange={valueInput} value={data.telefone}/>
                     <label>Endereço</label>
-                    <input type="text" name="endereco" placeholder="Digite seu endereço" onChange={valueInput}/>
+                    <input type="text" name="endereco" placeholder="Digite seu endereço" onChange={valueInput} value={data.endereco}/>
                     <label>Selecione o serviço</label>
-                    <select name="title" id="title" onChange={valueInput}>
+                    <select name="title" id="title" onChange={valueInput} value={data.title}>
                         <option value="">Selecione um serviço</option>
                         <option value="Higienização de estofados">Higienização de estofados - R$ 200,00</option>
                         <option value="Higienização de colchão solteiro">Higienização colchão solteiro - R$ 150,00</option>
@@ -88,7 +88,7 @@ const FormAdd = () => {
                         <option value="Lavagem de tapete">Lavagem de tapete - R$ 150,00</option>
                     </select>
                     <label>Observação</label>
-                    <textarea name="msg" rows={3} onChange={valueInput}></textarea>
+                    <textarea name="msg" rows={3} onChange={valueInput} value={data.msg}></textarea>
                     <div className="div-btn">
                         <button className="btn-form" type="submit">Enviar</button> 
                     </div>

@@ -30,7 +30,7 @@ export const menu = [
         {
           id: 3,
           title: "Agendamento",
-          url: "/users/1",
+          url: "/schedule",
           icon: "agenda.svg",
         },
         {

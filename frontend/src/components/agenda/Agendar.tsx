@@ -19,7 +19,6 @@ const ModalAgenda = ({ isOpen, setOpen, title, description }: IModal) => {
                 <FormAdd />
                 <span className="close" onClick={() => setOpen(!isOpen)}>          X
                 </span>               
-                
             </div>
         </div>
     );

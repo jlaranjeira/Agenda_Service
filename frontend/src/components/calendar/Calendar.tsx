@@ -58,7 +58,7 @@ function Calendar() {
         }        
         
         initialView={"dayGridMonth"}
-        height={"60vh"}
+        height={"90vh"}
         editable={true}
         selectable={true}
         dayMaxEvents={true}
@@ -79,7 +79,7 @@ function Calendar() {
     isOpen={open} 
     setOpen={setOpen}
     title={'Agendar serviço'}
-                    
+                  
 />
 
     </div>
@@ -103,7 +103,7 @@ function Calendar() {
   
   function select(info) {
     alert('Data selecionada: ' +  info.dateStr);
-    {setOpen(!open)}  
+    {setOpen(!open)} 
   };
 
   /*function handleWeekendsToggle(boolean) = {
