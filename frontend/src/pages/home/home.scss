@@ -121,15 +121,52 @@
                 border-radius: 10px;
                 padding: 10px;
                 border: 2px solid #E8F1F4;
+                display: flex;
+                
             }
 
             .despesa {
                 border-radius: 10px;
                 padding: 10px;
                 border: 2px solid #E8F1F4;
+                
+            }
+            .div-logo-receita{
+                
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+            .logo-receita {
+                 width: 40px;
+                 height: 40px;
+            }
+            .div-icone-receita {
+                display: flex;
+                margin-top: 10px;
+            }
+            .div-icone-receita h4{
+                margin-top: 20px;
+            }
+            .div-logo-despesas {
+                display: flex;
+                margin-top: 10px;
+            }
+            .div-logo-despesas h4{
+                margin-top: 20px;
             }
 
-            
+            .icon-despesa {
+                width: 40px;
+            }
+            .osfechada h1{
+                color: rgb(161, 7, 7);
+                margin-top: 10px;
+            }
+            .osaberta h1{
+                color: darkgreen;
+                margin-top: 10px;
+            }            
         }
     }
 }
