@@ -4,27 +4,13 @@ import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from
 import { useNavigation } from '@react-navigation/native';
 import { ActivityIndicator } from 'react-native';
 
-const [carregando, setCarregando] = useState(true)
-const [dados, setDados] = useState([])
-
-useEffect(() => {
-                fetch('http://localhost:3000/clients')
-                .then((resp) = resp.json())
-                .then((json) = setDados(json))
-                .catch(() => ('erro ao carregar lita de clients'))
-                .finally(() => setCarregando(false))
-
-                console.log(setDados)
-            },[]
-            
-            
-)
 
 
 
 
 
-const events = [{dados}]
+
+//const events = [{dados}]
    /* {
         id: '01',
         nome: 'José Laranjeira',
@@ -56,6 +42,20 @@ const events = [{dados}]
 ]*/
 
 export default function DataList(){
+    const [carregando, setCarregando] = useState(true)
+    const [dados, setDados] = useState([])
+    
+    useEffect(() => {
+                    fetch('http://localhost:3000/clients')
+                    .then((resp) => resp.json())
+                    .then((json) => setDados(json))
+                    .catch(() => ('erro ao carregar lita de clients'))
+                    .finally(() => setCarregando(false))          
+                },[]      
+                
+    )
+
+
     const navigation = useNavigation();
     return(
         <View style={styles.container}>
@@ -63,7 +63,7 @@ export default function DataList(){
 
                 carregando ? <ActivityIndicator /> : (
             <FlatList 
-                data={events}                
+                data={dados}                
                 keyExtractor={item=>item.id}
                 renderItem={({item}) =>
                 <View style={styles.cell}>
@@ -71,7 +71,7 @@ export default function DataList(){
                         <Text style={styles.textItem}>Nome:</Text>
                         <Text style={styles.item}>{item.nome}</Text>
                         <Text style={styles.textItem}>Serviço:</Text>
-                        <Text style={styles.item}>{item.servico}</Text>
+                        <Text style={styles.item}>{item.title}</Text>
                         <Text style={styles.textItem}>Telefone:</Text>
                         <Text style={styles.item}>{item.telefone}</Text>
                     </TouchableOpacity>                  

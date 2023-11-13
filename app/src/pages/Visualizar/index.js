@@ -15,8 +15,8 @@ export default function Visualizar({route}){
                 <Text style={styles.campo}>Email: {route.params.email}</Text>
                 <Text style={styles.campo}>Telefone: {route.params.telefone}</Text>
                 <Text style={styles.campo}>Endereço: {route.params.endereco}</Text>
-                <Text style={styles.campo}>Serviço: {route.params.servico}</Text>
-                <Text style={styles.campo}>Data: {route.params.date}</Text>             
+                <Text style={styles.campo}>Serviço: {route.params.title}</Text>
+                <Text style={styles.campo}>Data: {route.params.start}</Text>             
 
             </View>
 
