@@ -12,6 +12,7 @@ import {
 import Login from "./pages/login/Login";
 import "./styles/global.scss"
 import Schedule from "./pages/schedule/index"
+import View from "./pages/view/View";
 
 function App() {
 
@@ -53,6 +54,10 @@ function App() {
         {
           path: "/schedule",
           element: <Schedule />
+        },
+        {
+          path: "/view/:id",
+          element: <View />
         },
         
       ]

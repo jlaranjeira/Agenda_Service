@@ -12,8 +12,10 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from '@fullcalendar/list';
 //import { INITIAL_EVENTS, createEventId } from './event-utils'
 import { useQuery } from 'react-query';
-import ModalAgenda from '../agenda/Agendar';
+import Modal from '../agenda/Agendar';
 import {useState} from 'react'
+import FormAdd from '../forrm/Form';
+
 
 
 function Calendar() {
@@ -32,6 +34,8 @@ function Calendar() {
         (res) => res.json()
       )
   });
+
+  console.log(data)
   
   return (
     
@@ -58,7 +62,7 @@ function Calendar() {
         }        
         
         initialView={"dayGridMonth"}
-        height={"60vh"}
+        height={"90vh"}
         editable={true}
         selectable={true}
         dayMaxEvents={true}
@@ -75,12 +79,20 @@ function Calendar() {
         
       />
 
-<ModalAgenda 
-    isOpen={open} 
+<Modal isOpen={open} 
     setOpen={setOpen}
-    title={'Agendar serviço'}
+    title={'Agendar serviço'}    
+    >
+    
+      <FormAdd />
+    
+    
+            
+
+</Modal>
+    
                     
-/>
+
 
     </div>
   );
@@ -93,7 +105,18 @@ function Calendar() {
     )
   };
 
-  function handleEventClick(clickInfo: EventClickArg) {  
+  function handleEventClick(eventClickInfo) { 
+    
+    //const client = eventClickInfo.event;
+    //console.log(client.id)
+    /*<div>
+      <Link href={`/view/${client.id}`}><button type='button'>Editar</button></Link>{" "}
+    </div>*/
+
+    
+    //window.location.href=`./view/${client.id}`
+
+    
       
     
       //if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
@@ -129,7 +152,8 @@ function Calendar() {
     )
   }*/
 
-}
 
+
+}
 
 export default Calendar;
