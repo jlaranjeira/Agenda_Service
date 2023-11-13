@@ -22,7 +22,6 @@ const Modal = ({ isOpen, setOpen, title, description }: IModal) => {
                 </div>
                 <span className="close" onClick={() => setOpen(!isOpen)}>          X
                 </span>               
-                
             </div>
         </div>
     );

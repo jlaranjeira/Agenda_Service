@@ -9,7 +9,7 @@ import {
   RouterProvider,
   Outlet, 
 } from "react-router-dom";
-import Login from "./pages/login/Login";
+import Login from "./pages/login";
 import "./styles/global.scss"
 
 function App() {

@@ -4,8 +4,13 @@
     display: flex;    
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     width: 450px; 
     margin-top: 10px;      
+=======
+    width: 400px; 
+    margin-top: 15px;      
+>>>>>>> 4156c6b8eaf7aeb590ccfedea73e245ef33d424a
 }
 
 .form-add {
@@ -44,7 +49,11 @@ input, select, textarea {
     font-size: 20px;
     cursor: pointer; 
     width: 150px; 
+<<<<<<< HEAD
     height: 50px;    
+=======
+    height: 45px;    
+>>>>>>> 4156c6b8eaf7aeb590ccfedea73e245ef33d424a
 }
 
 .close {
@@ -59,4 +68,3 @@ label {
     font-size: 16px;
     font-weight: 500;
 }
-  

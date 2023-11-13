@@ -9,20 +9,23 @@ import {
   RouterProvider,
   Outlet, 
 } from "react-router-dom";
-import Login from "./pages/login/Login";
 import "./styles/global.scss"
+<<<<<<< HEAD
 import Schedule from "./pages/schedule/index"
 import View from "./pages/view/View";
+=======
+import Schedule from "./pages/schedule/"
+
+>>>>>>> 4156c6b8eaf7aeb590ccfedea73e245ef33d424a
 
 function App() {
-
   const Layout = () => {
     return (
       <div className="main">
         <Navbar />
         <div className="container">
           <div className="menuContainer">
-            <Menu />
+            <Menu />            
           </div>
           <div className="contentContainer">
             <Outlet />                       
@@ -48,28 +51,35 @@ function App() {
           element: <Clients />
         },
         {
+          path: "/client/:id",
+          element: <Clients />
+        },
+        {
           path: "/services",
           element: <Services />
         },
         {
-          path: "/schedule",
+          path: "/schedule/:id",
           element: <Schedule />
+<<<<<<< HEAD
         },
         {
           path: "/view/:id",
           element: <View />
         },
+=======
+        },            
+>>>>>>> 4156c6b8eaf7aeb590ccfedea73e245ef33d424a
         
       ]
     },
-    {
-      path: "/login",
-      element: <Login />
-    },
+    
+   
+    
   ]);
 
   return <RouterProvider router={router} />;
   
-}
 
+}
 export default App;

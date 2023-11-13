@@ -14,8 +14,13 @@ import listPlugin from '@fullcalendar/list';
 import { useQuery } from 'react-query';
 import Modal from '../agenda/Agendar';
 import {useState} from 'react'
+<<<<<<< HEAD
 import FormAdd from '../forrm/Form';
 
+=======
+import { Link, NavLink, Navigate, useHref, useNavigate, useParams } from 'react-router-dom';
+import { WindowScrollController } from '@fullcalendar/core/internal';
+>>>>>>> 4156c6b8eaf7aeb590ccfedea73e245ef33d424a
 
 
 function Calendar() {
@@ -67,7 +72,7 @@ function Calendar() {
         selectable={true}
         dayMaxEvents={true}
         eventContent={renderEventContent} // custom render function
-        eventClick={handleEventClick}
+        eventClick={e => handleEventClick(e)}
         dateClick={select}
         weekends={true} 
         selectMirror={true}
@@ -81,6 +86,7 @@ function Calendar() {
 
 <Modal isOpen={open} 
     setOpen={setOpen}
+<<<<<<< HEAD
     title={'Agendar serviço'}    
     >
     
@@ -93,6 +99,11 @@ function Calendar() {
     
                     
 
+=======
+    title={'Agendar serviço'}
+                  
+/>
+>>>>>>> 4156c6b8eaf7aeb590ccfedea73e245ef33d424a
 
     </div>
   );
@@ -105,6 +116,7 @@ function Calendar() {
     )
   };
 
+<<<<<<< HEAD
   function handleEventClick(eventClickInfo) { 
     
     //const client = eventClickInfo.event;
@@ -117,8 +129,30 @@ function Calendar() {
     //window.location.href=`./view/${client.id}`
 
     
+=======
+ 
+  
+  function handleEventClick(info) {
+   
+     const client = info.event;
+    return window.location.href=(`/schedule/${client.id}`)
+      
+  
+        // <Link to={`/schedule/${client.id}`}></Link>
+      //console.log(client.id);
+
+
+      
+>>>>>>> 4156c6b8eaf7aeb590ccfedea73e245ef33d424a
       
     
+      
+        
+       
+    
+
+    //<NavLink to="/schedule/" >{client.id}</NavLink>
+
       //if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
          //clickInfo.event.id
       //}       
@@ -126,7 +160,7 @@ function Calendar() {
   
   function select(info) {
     alert('Data selecionada: ' +  info.dateStr);
-    {setOpen(!open)}  
+    {setOpen(!open)} 
   };
 
   /*function handleWeekendsToggle(boolean) = {

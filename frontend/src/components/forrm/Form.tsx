@@ -49,7 +49,11 @@ const FormAdd = () => {
                     endereco: '',
                     title: '',
                     msg: '',
+<<<<<<< HEAD
                     start: ''                  
+=======
+                    start: ''                   
+>>>>>>> 4156c6b8eaf7aeb590ccfedea73e245ef33d424a
                 })
             }).catch((err) => { // acessa o catch quandoa API retorna erro.
                 //console.log(err.response.data.mensagem);

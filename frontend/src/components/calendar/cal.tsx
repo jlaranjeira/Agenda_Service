@@ -57,7 +57,7 @@ function Cal() {
           }
         }        
         
-        height={"30vh"}
+        height={"40vh"}
         editable={true}
         selectable={true}
         dayMaxEvents={true}
@@ -92,10 +92,10 @@ function Cal() {
   };
 
   function handleEventClick(clickInfo: EventClickArg) {    
-        
-      if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
+       
+      /*if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
           clickInfo.event.remove()
-      }       
+      }   */    
   };
   
   function select(info) {
