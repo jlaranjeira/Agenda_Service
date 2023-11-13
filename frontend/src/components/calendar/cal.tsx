@@ -28,7 +28,7 @@ function Cal() {
   const { isloading, data } = useQuery({
     queryKey: ["allclients"],
     queryFn: () =>
-      fetch("http://localhost:3000/tasks").then(
+      fetch("http://localhost:3000/clients").then(
         (res) => res.json()
       )
   });
@@ -92,10 +92,10 @@ function Cal() {
   };
 
   function handleEventClick(clickInfo: EventClickArg) {    
-        
-      if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
+       
+      /*if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
           clickInfo.event.remove()
-      }       
+      }   */    
   };
   
   function select(info) {

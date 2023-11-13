@@ -5,7 +5,11 @@ import Calendar from "../../components/calendar/Calendar"
 import "./home.scss"
 import { Link } from "react-router-dom";
 import Cal from "../../components/calendar/cal";
+
+
+
 const Home = () => {
+    
     const [open, setOpen] = useState<boolean>(false);
     const [data, setData] = useState({
         nome: '',

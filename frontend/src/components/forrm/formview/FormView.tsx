@@ -26,7 +26,7 @@ useEffect(() => {
                     {
                         data.map((data, index) => {
                             return <div className="content-view"key={index}>
-                                <label>Data: <span>{data.id}</span> </label>
+                                <label>Data: <span>{data.data}</span> </label>
                     
                     
                         <label>Nome: <span>{data.nome}</span></label>

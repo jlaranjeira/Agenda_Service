@@ -14,6 +14,8 @@ import listPlugin from '@fullcalendar/list';
 import { useQuery } from 'react-query';
 import ModalAgenda from '../agenda/Agendar';
 import {useState} from 'react'
+import { Link, NavLink, Navigate, useHref, useNavigate, useParams } from 'react-router-dom';
+import { WindowScrollController } from '@fullcalendar/core/internal';
 
 
 function Calendar() {
@@ -63,7 +65,7 @@ function Calendar() {
         selectable={true}
         dayMaxEvents={true}
         eventContent={renderEventContent} // custom render function
-        eventClick={handleEventClick}
+        eventClick={e => handleEventClick(e)}
         dateClick={select}
         weekends={true} 
         selectMirror={true}
@@ -93,9 +95,28 @@ function Calendar() {
     )
   };
 
-  function handleEventClick(clickInfo: EventClickArg) {  
+ 
+  
+  function handleEventClick(info) {
+   
+     const client = info.event;
+    return window.location.href=(`/schedule/${client.id}`)
+      
+  
+        // <Link to={`/schedule/${client.id}`}></Link>
+      //console.log(client.id);
+
+
+      
       
     
+      
+        
+       
+    
+
+    //<NavLink to="/schedule/" >{client.id}</NavLink>
+
       //if (confirm(`Deseja realmente apagar este registro? '${clickInfo.event.title}'`) == true) {                
          //clickInfo.event.id
       //}       
